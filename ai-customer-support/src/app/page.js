@@ -1,5 +1,6 @@
 "use client"
-import { Box, Stack, TextField, Button } from "@mui/material"
+
+import { Box, Stack, TextField, Button, Typography } from "@mui/material"
 import { useState, useRef, useEffect } from "react";
 
 export default function Home() {
@@ -85,15 +86,39 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      
     >
+       <Box
+          display="flex"
+          alignItems="center"
+          width="600px"
+          p={2}
+          sx={{
+            background: '#4CAF50', // Header background color
+            color: 'white',
+            borderRadius: '10px 10px 0 0', // Rounded corners on top
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)', // Optional shadow for header
+          }}
+        >
+          <img src="\android-chrome-192x192.png" alt="Logo" style={{ height: '40px', width: 'auto', marginRight: '10px' }} /> {/* Adjust logo path and size */}
+          <Typography variant="h6">Fridgy Chat</Typography> {/* Header text */}
+        </Box>
       <Stack
         direction={'column'}
-        width="500px"
-        height="700px"
-        border="1px solid black"
+        width="600px"
+        height="600px"
+        borderRadius="0 0 10px 10px"
         p={2}
         spacing={3}
+        sx={{
+          background: 'white', // Background color of the chat box
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)', // Shadow to give a pop-up effect
+          transform: 'translateY(-10px)', 
+        }}
       >
+        
+       
+
         <Stack
           direction={'column'}
           spacing={2}
@@ -112,11 +137,11 @@ export default function Home() {
               <Box
                 bgcolor={
                   message.role === 'assistant'
-                    ? 'primary.main'
-                    : 'secondary.main'
+                    ? '#89B449'
+                    : '#a9c480'
                 }
                 color="white"
-                borderRadius={16}
+                borderRadius={5}
                 p={3}
               >
                 {message.content}
@@ -131,7 +156,7 @@ export default function Home() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
-          <Button variant="contained" onClick={sendMessage}>
+          <Button variant="contained" onClick={sendMessage} className="green-button">
             Send
           </Button>
         </Stack>

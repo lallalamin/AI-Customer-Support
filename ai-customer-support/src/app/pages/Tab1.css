@@ -1,0 +1,27 @@
+.toolbar{
+    --background: #a9c480;
+}
+
+.title{
+    color: white;
+    font-weight: 700;
+}
+
+.bold-title {
+    font-weight: 700;
+  }
+
+.pantry-container{
+    margin: 2.5rem;
+    
+}
+
+.pantry-list{
+    --background: whitesmoke;
+}
+
+.pantry-list ion-checkbox {
+    --checkbox-background-checked: #89B449;
+    --border-color: #89B449;
+    --border-color-checked: #89B449;
+  }
